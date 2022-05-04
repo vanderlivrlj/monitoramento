@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Refresh">
+	<title>Monitoramento GAP-DF</title>
+	<script type="text/javascript">
+	//CONTENT = "60; URL = index.php"
+	var g_iCount = new Number();
+	var g_iCount = 60;
+	// Função para contagem regressiva - de 1 em 1 minuto
+	function startCountdown(){
+		if ((g_iCount - 1) >= 0){
+			g_iCount = g_iCount - 1;
+			document.getElementById('numberCountdown').innerHTML = "Atualização em " + g_iCount + "segundos(s)";
+			setTimeout('startCountdown()',1000);
+		}else {
+			document.location.href='index.php';
+		}
+	}
+	</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+body {
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+
+
+ul {
+  list-style-type: none;
+  height: 40px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+.navbar{
+    display: flex;
+    width: 100%;
+}
+</style>
+</head>
+<body>
+    <div class="navbar">
+    <ul>
+<DIV style="width:450px; float:left; border:none;font-family:Verdana, Geneva, sans-serif; font-size:16px; color:#069; margin-left:10px;"><strong>Painel de Monitoramento de Servidores</strong></DIV>
+<DIV style="font-family:Verdana, Geneva, sans-serif; border:none; font-size:14px; font-weight:bold; color:#990000; margin-left:10px; width:300px; float:left;" id=numberCountdown></DIV>
+<br style="clear:both">
+</ul>
+</div>
+<script language="javascript">
+    startCountdown();
+</script>
+</body>
+</html>
