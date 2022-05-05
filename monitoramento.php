@@ -5,9 +5,8 @@ require_once 'html/header.html';
 $sql = "SELECT * FROM ip ";
  $resultado = mysqli_query($mysqli,$sql) or die("Erro ao retornar dados");
 
- $sql_count = "SELECT * FROM ip ";
- $count = mysqli_query($mysqli, $sql_count);
- $result_count = mysqli_fetch_array($count,MYSQLI_ASSOC);
+ $query = mysqli_query($mysqli, $sql);
+ $result = mysqli_fetch_array($query,MYSQLI_ASSOC);
  
  // Obtendo os dados por meio de um loop while
  while ($registro = mysqli_fetch_array($resultado))
