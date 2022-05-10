@@ -2,7 +2,7 @@
 require_once 'php/connect.php';
 require_once 'html/header.html';
 
-$sql = "SELECT * FROM ip ";
+ $sql = "SELECT * FROM ip ";
  $resultado = mysqli_query($mysqli,$sql) or die("Erro ao retornar dados");
 
  $query = mysqli_query($mysqli, $sql);
@@ -38,20 +38,55 @@ $sql = "SELECT * FROM ip ";
    curl_close($curl);
 
    if ($resp){
+    //  echo "<div class=\"/alinha-items>";
      $mensagem = " - OK";
-     echo "<br>";
-     echo "<td>".$nome."</td>";
+     echo "<br><div class=\"items-ok\">";
+     echo $nome;
      echo "</tr>";
-     echo $mensagem; echo "<br>";
+     echo $mensagem; echo "<br> </div>";
    } else {
      echo "<tr>";
-     echo "<br>";
+     echo "<br><div class=\"items-of\">";
      echo "<td>".$nome."</td>";
-     echo "</tr>";
+     echo "</tr> ";
      $mensagem = " - ERROR";
-     echo $mensagem;
+     echo $mensagem." </di>";
+    //  echo "</div>";
    }
  }
 mysqli_close($mysqli);
 
 ?>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <style type="text/css">
+    .items{
+      display: block
+      grid-template-columns: 100px 100px 100px;
+      justify-content: space-around;
+    }
+    
+    .items-ok{
+      width:180px;
+      height: 50px;
+      display:flex;
+      flex-direction:row;
+      background-color: green;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .items-of{
+      width:33%;
+      height: 50px;
+      display:flex;
+      flex-direction:row;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: red;
+    }
+  </style>
+</head>
+</html>

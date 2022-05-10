@@ -41,11 +41,35 @@
             /* Safari */
             position: sticky;
             top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .navbar {
             display: flex;
             width: 100%;
+        }
+
+        .titulo-painel{
+            width:450px; 
+            float:left; 
+            border:none;
+            font-family:Verdana, Geneva, sans-serif; 
+            font-size:16px; 
+            color:#069; 
+            margin-left:10px;
+        }
+
+        .contagem{
+            font-family:Verdana, Geneva, sans-serif; 
+            border:none; 
+            font-size:14px;
+             font-weight:bold; 
+             color:#990000; 
+             margin-left:10px; 
+             width:300px; 
+            float:left;
         }
     </style>
 </head>
@@ -53,10 +77,9 @@
 <body>
     <div class="navbar">
         <ul>
-            <DIV
-                style="width:450px; float:left; border:none;font-family:Verdana, Geneva, sans-serif; font-size:16px; color:#069; margin-left:10px;">
-                <strong>Painel de Monitoramento de Servidores</strong></DIV>
-            <DIV style="font-family:Verdana, Geneva, sans-serif; border:none; font-size:14px; font-weight:bold; color:#990000; margin-left:10px; width:300px; float:left;"
+            <DIV class="titulo-painel">
+                <strong>Painel de Monitoramento</strong></DIV>
+            <DIV class="contagem"
                 id=numberCountdown></DIV>
             <br style="clear:both">
         </ul>
